@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include <list>
 
@@ -9,8 +9,8 @@ int main() {
     std::list<int> lst(1000000);
 
     // Распечатать размер вектора и списка в байтах
-    std::cout << "Размер вектора: " << sizeof(vec) << " байт" << std::endl;
-    std::cout << "Размер списка: " << sizeof(lst) << " байт" << std::endl;
+    std::cout << "Размер вектора: " << sizeof(std::vector<int>) + (sizeof(int) * vec.capacity()) << " байт" << std::endl;
+    std::cout << "Размер списка: " << sizeof(std::list<int>) + (sizeof(int) + 2 * sizeof(void*)) * lst.size() << " байт" << std::endl;
 
     return 0;
 }
